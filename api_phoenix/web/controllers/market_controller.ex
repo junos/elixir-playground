@@ -7,8 +7,8 @@ defmodule ApiPhoenix.MarketController do
     markets = Repo.all(Market)
     conn
     |> put_resp_content_type("text/xml")
-    |> render "index.xml", content: {:person, %{id: 12345}, "Josh"} |> XmlBuilder.generate
-    #|> render "index.xml", data: markets
+    # |> render "index.xml", content: {:person, %{id: 12345}, "Josh"} |> XmlBuilder.generate
+    |> render "index.xml", markets: markets
     # |> send_resp(201, "")
   end
 
