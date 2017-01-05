@@ -18,13 +18,21 @@ defmodule ApiPhoenix.Web do
 
   def model do
     quote do
-      # Define common model functionality
+      use Ecto.Schema
+
+      import Ecto
+      import Ecto.Changeset
+      import Ecto.Query
     end
   end
 
   def controller do
     quote do
       use Phoenix.Controller
+
+      alias ApiPhoenix.Repo
+      import Ecto
+      import Ecto.Query
 
       import ApiPhoenix.Router.Helpers
       import ApiPhoenix.Gettext
@@ -56,6 +64,10 @@ defmodule ApiPhoenix.Web do
   def channel do
     quote do
       use Phoenix.Channel
+
+      alias ApiPhoenix.Repo
+      import Ecto
+      import Ecto.Query
       import ApiPhoenix.Gettext
     end
   end

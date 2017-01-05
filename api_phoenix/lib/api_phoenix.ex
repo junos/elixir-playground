@@ -8,6 +8,8 @@ defmodule ApiPhoenix do
 
     # Define workers and child supervisors to be supervised
     children = [
+      # Start the Ecto repository
+      supervisor(ApiPhoenix.Repo, []),
       # Start the endpoint when the application starts
       supervisor(ApiPhoenix.Endpoint, []),
       # Start your own worker by calling: ApiPhoenix.Worker.start_link(arg1, arg2, arg3)

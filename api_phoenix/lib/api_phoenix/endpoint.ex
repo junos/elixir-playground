@@ -36,7 +36,7 @@ defmodule ApiPhoenix.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_api_phoenix_key",
-    signing_salt: "tD4iJTJC"
+    signing_salt: "FFG/xGDs"
 
   plug ApiPhoenix.Router
 end

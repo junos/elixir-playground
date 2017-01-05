@@ -8,3 +8,12 @@ config :api_phoenix, ApiPhoenix.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+# Configure your database
+config :api_phoenix, ApiPhoenix.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: "postgres",
+  password: "postgres",
+  database: "api_phoenix_test",
+  hostname: "localhost",
+  pool: Ecto.Adapters.SQL.Sandbox

@@ -5,10 +5,14 @@
 # is restricted to this project.
 use Mix.Config
 
+# General application configuration
+config :api_phoenix,
+  ecto_repos: [ApiPhoenix.Repo]
+
 # Configures the endpoint
 config :api_phoenix, ApiPhoenix.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "0CZCW7ZHJf2xsA6dxjvtd1vF/1UFduVpk4hSsJcKkSrFuB9QFXwnX2Yli1F+vItk",
+  secret_key_base: "Hj7OrOvPc5ZodWbVThL6LF3EN9/IThlZXxwwFByzHngM38GW7pdxRj8ysVWDiqn/",
   render_errors: [view: ApiPhoenix.ErrorView, accepts: ~w(html json)],
   pubsub: [name: ApiPhoenix.PubSub,
            adapter: Phoenix.PubSub.PG2]

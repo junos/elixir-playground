@@ -20,6 +20,11 @@ defmodule ApiPhoenix.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
 
+      alias ApiPhoenix.Repo
+      import Ecto
+      import Ecto.Changeset
+      import Ecto.Query
+
       import ApiPhoenix.Router.Helpers
 
       # The default endpoint for testing
@@ -28,6 +33,11 @@ defmodule ApiPhoenix.ConnCase do
   end
 
   setup tags do
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(ApiPhoenix.Repo)
+
+    unless tags[:async] do
+      Ecto.Adapters.SQL.Sandbox.mode(ApiPhoenix.Repo, {:shared, self()})
+    end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
