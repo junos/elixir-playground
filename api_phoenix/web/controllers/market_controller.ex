@@ -5,7 +5,7 @@ defmodule ApiPhoenix.MarketController do
 
   def index(conn, _params) do
     markets = Repo.all(Market)
-    render(conn, "index.json", markets: markets)
+    render(conn, "index.json", data: markets)
   end
 
   def create(conn, %{"market" => market_params}) do

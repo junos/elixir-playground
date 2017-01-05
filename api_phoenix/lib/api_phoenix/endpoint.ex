@@ -38,5 +38,7 @@ defmodule ApiPhoenix.Endpoint do
     key: "_api_phoenix_key",
     signing_salt: "FFG/xGDs"
 
+  plug Corsica, origins: "*"
+
   plug ApiPhoenix.Router
 end

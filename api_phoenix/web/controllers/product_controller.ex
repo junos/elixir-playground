@@ -5,7 +5,7 @@ defmodule ApiPhoenix.ProductController do
 
   def index(conn, _params) do
     products = Repo.all(Product)
-    render(conn, "index.json", products: products)
+    render(conn, "index.json", data: products)
   end
 
   def create(conn, %{"product" => product_params}) do
