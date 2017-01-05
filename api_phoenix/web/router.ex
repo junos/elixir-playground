@@ -10,7 +10,7 @@ defmodule ApiPhoenix.Router do
   end
 
   pipeline :api do
-    plug :accepts, ["json"]
+    plug :accepts, ["xml","json"]
   end
 
   scope "/", ApiPhoenix do

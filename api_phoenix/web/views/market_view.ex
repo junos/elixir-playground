@@ -1,10 +1,15 @@
 defmodule ApiPhoenix.MarketView do
   use ApiPhoenix.Web, :view
 
-  # attributes [:id, :name, :phone]
-  # has_many :products, link: "/markets/:id/products"
+  attributes [:id, :name, :phone]
+  #has_many :products, link: "/markets/:id/products"
 
-  def render("index.json", %{markets: markets}) do
+  def render("index.xml", %{markets: markets}) do
+    raise "hello"
+    # %{data: render_many(markets, ApiPhoenix.MarketView, "market.json")}
+  end
+
+  def render("index.json", %{data: markets}) do
     %{data: render_many(markets, ApiPhoenix.MarketView, "market.json")}
   end
 
