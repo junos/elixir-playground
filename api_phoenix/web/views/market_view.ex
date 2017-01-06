@@ -13,6 +13,10 @@ defmodule ApiPhoenix.MarketView do
     m |> XmlBuilder.generate
   end
 
+  def render("index.csv", %{data: markets}) do
+    Enum.join(Enum.map(markets, fn(x) -> "#{x.name},#{x.phone}" end), "\n")
+  end
+
   def render("index.json", %{data: markets}) do
     %{data: render_many(markets, ApiPhoenix.MarketView, "market.json")}
   end

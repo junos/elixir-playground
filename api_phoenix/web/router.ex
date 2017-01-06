@@ -25,8 +25,10 @@ defmodule ApiPhoenix.Router do
 
     resources "/markets", MarketController, except: [:new, :edit] do
       resources "/products", ProductController, only: [:index]
-      end
+    end
 
-      resources "/products", ProductController, except: [:new, :edit]
+    resources "/products", ProductController, except: [:new, :edit]
+
+    resources "/prices", PriceController, except: [:new, :edit]
   end
 end

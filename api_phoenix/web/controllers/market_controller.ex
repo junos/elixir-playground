@@ -13,7 +13,9 @@ defmodule ApiPhoenix.MarketController do
 
   def index(conn, %{"format" => "csv" = _params}) do
     markets = Repo.all(Market)
-    render(conn, "index.json", data: markets)
+    conn
+    |> put_resp_content_type("text/csv")
+    |> render "index.csv", data: markets
   end
 
   def index(conn, _params) do
