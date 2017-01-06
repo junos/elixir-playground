@@ -4,9 +4,8 @@ defmodule ApiPhoenix.MarketView do
   attributes [:id, :name, :phone]
   #has_many :products, link: "/markets/:id/products"
 
-  def render("index.xml", %{markets: markets}) do
-    raise "hello"
-    # %{data: render_many(markets, ApiPhoenix.MarketView, "market.json")}
+  def render("index.xml", %{data: markets}) do
+    {:person, %{id: 12345}, "Josh"} |> XmlBuilder.generate
   end
 
   def render("index.json", %{data: markets}) do
