@@ -1,3 +1,5 @@
+require IEx
+import XmlBuilder
 defmodule ApiPhoenix.MarketView do
   use ApiPhoenix.Web, :view
 
@@ -5,7 +7,10 @@ defmodule ApiPhoenix.MarketView do
   #has_many :products, link: "/markets/:id/products"
 
   def render("index.xml", %{data: markets}) do
-    {:person, %{id: 12345}, "Josh"} |> XmlBuilder.generate
+    #IEx.pry
+    # {:person, %{id: 12345}, "Josh"} |> XmlBuilder.generate
+    m = {:markets, nil, Enum.map(markets, fn(x) -> {:market, nil, [{:name, nil, x.name}, {:phone, nil, x.phone}]} end)}
+    m |> XmlBuilder.generate
   end
 
   def render("index.json", %{data: markets}) do
