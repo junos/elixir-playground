@@ -31,8 +31,20 @@ defmodule ApiPhoenix.PriceController do
   def query1() do
     Repo.all(
       from p in Price,
+      limit: 1)
+  end
+
+  def query2() do
+    Repo.all(
+      from p in Price,
       where: p.field2 == "AAPL",
       limit: 6707)
+  end
+
+  def query3() do
+    Repo.all(
+      from p in Price,
+      where: p.field2 == "AAPL")
   end
 
   # def create(conn, %{"price" => price_params}) do
