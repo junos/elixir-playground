@@ -91,8 +91,8 @@ by Phoenix web framework
 
 # Learning
 + Elixir
-    + Pattern matching
-    + Pipe operator
+    + Functional programming
+    + productivity and performance
     + ...
 + Phoenix
     + Hex
@@ -103,6 +103,7 @@ by Phoenix web framework
 ---
 
 # Next
++ ...
 
 ---
 # Useful links
