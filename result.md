@@ -1,12 +1,12 @@
 class: center, middle, inverse
 
-# API prototype
-by Phoenix web framework
+# API prototyping
+Elixir(Phoenix web framework) VS Golang(Gin)
 
 ---
-# Design goals
-- high rendering performance (json, xml, json)
-- high concurrency
+# Design consideration
+- Rendering performance (json, xml, json)
+- Concurrency
 
 ---
 # Conponents
@@ -88,14 +88,17 @@ by Phoenix web framework
 - [info] Sent 200 in **106ms**
 
 ---
+# Golang (Gin)
+-
 
+---
 # Learning
 + Elixir
     + Functional programming
     + productivity and performance
     + ...
 + Phoenix
-    + Hex
+    + Mix, Hex
     + Ecto
     + ..
 + Debugging
@@ -109,6 +112,7 @@ by Phoenix web framework
 # Useful links
 - Elixir School https://elixirschool.com/
 - Phoenix and Elixir slack channel https://elixir-lang.slack.com/
+- Elixir podcast https://soundcloud.com/elixirfountain
 - ...
 
 
